@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>בניית מחשב גיימינג בהתאמה אישית</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>בניית מחשב גיימינג בהתאמה אישית</h1>
+        <p>בחר תקציב וסוג בנייה</p>
+    </header>
+
+    <main>
+        <section id="controls">
+            <div class="budget-container">
+                <label for="budget">הזן תקציב (₪):</label>
+                <input type="number" id="budget" placeholder="לדוגמה: 5000" min="3000" max="25000">
+            </div>
+            <div class="build-buttons">
+                <button id="amd-build" class="build-btn amd">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/AMD_Logo.svg/1024px-AMD_Logo.svg.png" alt="AMD Logo" class="logo">
+                    <span>AMD BUILD</span>
+                </button>
+                <button id="intel-build" class="build-btn intel">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Intel-logo.svg/1024px-Intel-logo.svg.png" alt="Intel Logo" class="logo">
+                    <span>INTEL BUILD</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="spec-table-container">
+            <h2>מפרט המחשב המוצע</h2>
+            <table id="spec-table">
+                <thead>
+                    <tr>
+                        <th>רכיב</th>
+                        <th>שם ודגם</th>
+                        <th>מחיר (ישראל)</th>
+                        <th>מחיר (אילת)</th>
+                        <th>הערות</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+            <div id="total-price">
+                <p><strong>סה"כ (ישראל):</strong> <span id="total-israel">0</span> ₪</p>
+                <p><strong>סה"כ (אילת):</strong> <span id="total-eilat">0</span> ₪</p>
+                <p class="savings"><strong>חיסכון באילת:</strong> <span id="savings">0</span> ₪ (<span id="savings-percent">0</span>%)</p>
+            </div>
+        </section>
+
+        <section id="export-options">
+            <button id="export-pdf">ייצוא ל-PDF</button>
+            <button id="export-image">שמור כתמונה</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>המחירים הינם הערכה בלבד ועשויים להשתנות בהתאם לזמינות ולספק.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>
