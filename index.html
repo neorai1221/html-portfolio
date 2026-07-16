@@ -1,20 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>My portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>דוח מס למשקיעים — IBKR Tax Israel</title>
+  <link rel="stylesheet" href="./src/styles.css">
 </head>
 <body>
-    <h1>Neorai's Portfolio</h1>
-    <h2>I'm a Web Developer</h2>
-    <hr>
-    <h3><a href="./public/movie-ranking.html">Movie Ranking Project</a></h3>
-    <img src="./assets/images/movie-ranking.png" height="200" alt="movie Ranking preview">
-    <br>
-    <h3><a href="./public/birthday-invite.html">Birthday Invite Project</a></h3>
-    <img src="./assets/images/my-birthday.png" height="200" alt="birthday invite preview">
-    <hr>
-    <a href="./public/about.html">About Me</a>
-    <a href="./public/contact.html">Contact Me</a>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">IBKR Tax Israel</p>
+      <h1>דוח מס למשקיעים</h1>
+      <p class="disclaimer">טיוטת חישוב והכנה לדיווח — נדרש אימות של רואה חשבון או יועץ מס</p>
+    </div>
+    <button class="language" type="button">English</button>
+  </header>
+  <nav aria-label="ניווט ראשי">
+    <a href="#dashboard">לוח בקרה</a>
+    <a href="#projects">דוחות מס</a>
+    <a href="#upload">העלאת קובץ</a>
+    <a href="#review">סקירת עסקאות</a>
+    <a href="#calculation">חישובים</a>
+    <a href="#exceptions">חריגות</a>
+    <a href="#downloads">מסמכים להורדה</a>
+    <a href="#settings">הגדרות</a>
+  </nav>
+  <main>
+    <section id="projects" class="card">
+      <h2>פתיחת פרויקט שנת מס</h2>
+      <form class="grid">
+        <label>שנת מס <input value="2024" inputmode="numeric"></label>
+        <label>תושבות <select><option>תושב ישראל</option><option>לא תושב / נדרש בירור</option></select></label>
+        <label>סוג נישום <select><option>יחיד</option><option>עסק / חברה</option></select></label>
+        <label>גרסת כללים <input class="ltr" value="IL-2024-demo-draft-0.1.0"></label>
+        <label><input type="checkbox"> קיימים הפסדים מועברים</label>
+        <label><input type="checkbox"> קיימים חשבונות ברוקר נוספים</label>
+      </form>
+    </section>
+    <section id="upload" class="card upload">
+      <h2>העלאת דוח מסחר</h2>
+      <p>העלה דוח שנתי או Flex Query של Interactive Brokers. מומלץ להשתמש בקובץ CSV או XML לקבלת תוצאה מדויקת יותר.</p>
+      <button type="button">בחירת קובץ</button>
+      <p class="status">הקובץ נקלט וממתין לעיבוד</p>
+      <ul class="checklist">
+        <li>בדיקת MIME, סיומת וחתימת קובץ</li>
+        <li>בדיקת סיסמה, וירוסים וגודל מקסימלי</li>
+        <li>חישוב ושמירת SHA-256</li>
+        <li>זיהוי מספר חשבון ותקופת דיווח</li>
+      </ul>
+    </section>
+    <section id="dashboard" class="card">
+      <h2>לוח בקרה</h2>
+      <div class="metrics">
+        <div><span>שלמות הנתונים</span><strong>92%</strong><small>חסר אישור שער ליום ללא פרסום</small></div>
+        <div><span>תמורת מכירות בש״ח</span><strong>₪6,684.48</strong></div>
+        <div><span>עלות רכישה</span><strong>₪4,471.54</strong></div>
+        <div><span>רווחי הון</span><strong>₪2,212.94</strong></div>
+        <div><span>חריגות פתוחות</span><strong>1</strong></div>
+        <div><span>סטטוס התאמה</span><strong>ממתין לבדיקה</strong></div>
+      </div>
+    </section>
+    <section id="review" class="card">
+      <h2>סקירת עסקאות</h2>
+      <table>
+        <thead><tr><th>סוג</th><th>תאריך</th><th>נייר</th><th>כמות</th><th>מטבע</th><th>מקור</th></tr></thead>
+        <tbody>
+          <tr><td>רכישה</td><td>10/01/2024</td><td><span class="ltr">AAPL</span></td><td class="ltr">10</td><td class="ltr">USD</td><td><button>הצג מקור</button></td></tr>
+          <tr><td>מכירה</td><td>03/06/2024</td><td><span class="ltr">AAPL</span></td><td class="ltr">12-</td><td class="ltr">USD</td><td><button>הצג מקור</button></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="calculation" class="card">
+      <h2>חישובים ושערי מטבע</h2>
+      <p>כל החישובים מבוצעים באופן דטרמיניסטי עם Decimal, לפי גרסת כללים מפורשת. אין שימוש ב־LLM לחישובים.</p>
+    </section>
+    <section id="exceptions" class="card warning"><h2>חריגות</h2><p>פעולות מורכבות, שערים חסרים או מכירה ללא שכבת רכישה מועברים לבדיקה מקצועית.</p></section>
+    <section id="downloads" class="card"><h2>מסמכים להורדה</h2><p>PDF עברי, XLSX מפורט, JSON manifest ודוח מיפוי לטפסים יופקו כטיוטה מסומנת.</p></section>
+  </main>
 </body>
 </html>

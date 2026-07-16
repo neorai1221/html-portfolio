@@ -1,0 +1,14 @@
+{
+  "ruleVersion": "IL-2024-demo-draft-0.1.0",
+  "taxYear": 2024,
+  "status": "draft_requires_professional_review",
+  "disclaimerHe": "טיוטת חישוב והכנה לדיווח — נדרש אימות של רואה חשבון או יועץ מס",
+  "lotMatching": { "method": "FIFO", "requiresProfessionalApproval": true },
+  "exchangeRateMissingDateBehavior": "previous_published_representative_rate_configurable",
+  "rules": [
+    { "id": "IL-DEMO-GROSS-COST", "descriptionHe": "עלות רכישה ברוטו במטבע המקור", "descriptionEn": "Gross purchase cost in source currency", "effectiveDate": "2024-01-01", "sourceReference": "Requires official verification", "sourceCheckedDate": null, "reviewerStatus": "unverified", "taxProfessionalApproved": false },
+    { "id": "IL-DEMO-ACQUISITION-ILS", "descriptionHe": "המרת עלות רכישה לשקלים", "descriptionEn": "Acquisition cost converted to ILS", "effectiveDate": "2024-01-01", "sourceReference": "Requires official verification", "sourceCheckedDate": null, "reviewerStatus": "unverified", "taxProfessionalApproved": false },
+    { "id": "IL-DEMO-PROCEEDS-ILS", "descriptionHe": "המרת תמורת מכירה לשקלים", "descriptionEn": "Sale proceeds converted to ILS", "effectiveDate": "2024-01-01", "sourceReference": "Requires official verification", "sourceCheckedDate": null, "reviewerStatus": "unverified", "taxProfessionalApproved": false },
+    { "id": "IL-DEMO-PRELIMINARY-GAIN", "descriptionHe": "רווח או הפסד ראשוני לפני התאמות מס", "descriptionEn": "Preliminary gain or loss before tax adjustments", "effectiveDate": "2024-01-01", "sourceReference": "Requires official verification", "sourceCheckedDate": null, "reviewerStatus": "unverified", "taxProfessionalApproved": false }
+  ]
+}
